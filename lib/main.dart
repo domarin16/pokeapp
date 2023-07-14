@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:reto_puntos_colombia/src/config/router/app_router.dart';
-import 'package:reto_puntos_colombia/src/config/themes/app_theme.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() => runApp(const MyApp());
+import 'src/config/router/app_router.dart';
+import 'src/config/themes/app_theme.dart';
+
+void main() => runApp(const ProviderScope(child: MyApp()));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  // final pokeProvider = StateProvider<Future<List<Pokemon>>>((ref) => PokeapiDatasource.getPokemons());
 
   @override
   Widget build(BuildContext context) {
